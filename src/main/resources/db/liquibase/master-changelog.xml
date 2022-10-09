@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"
+>
+
+    <changeSet id="1" author="Javohir ELmurodov">
+        <comment>A sample change log</comment>
+
+        <createTable tableName="author">
+            <column name="id" type="varchar">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="full_name" type="varchar">
+            </column>
+        </createTable>
+        <insert tableName="author">
+            <column name="id" value="0353dd7c-acb2-49cf-9cf9-f4597b1e485b"/>
+            <column name="full_name" value="Berdimurodv Shohruh"/>
+        </insert>
+        <insert tableName="author">
+            <column name="id" value="8343e719-34ac-40b2-9371-3911c682388c"/>
+            <column name="full_name" value="Isroilov Adash"/>
+        </insert>
+
+        <createTable tableName="book">
+            <column name="id" type="varchar">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar">
+                <constraints unique="true"/>
+            </column>
+            <column name="author" type="varchar">
+                <constraints foreignKeyName="book_author_id_fk"
+                             referencedTableName="author"
+                             referencedColumnNames="id"/    >
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <include file="/changelogs/000000001_insert_books.xml" relativeToChangelogFile="true" />
+
+
+</databaseChangeLog>

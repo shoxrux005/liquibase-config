@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"
+>
+
+    <changeSet id="2" author="Javohir ELmurodov">
+        <comment>Inserting some books</comment>
+        <insert tableName="book">
+            <column name="id" value="88765dd8-4e0d-421b-bd14-1d0e7d8d54e5" />
+            <column name="title" value="Otamdan Qolgan dalalar"/>
+            <column name="author" value="0353dd7c-acb2-49cf-9cf9-f4597b1e485b" />
+        </insert>
+
+        <insert tableName="book">
+            <column name="id" value="88765dd8-4e0d-421b-bd14-1d0e7d8d54e4" />
+            <column name="title" value="Otgan Kunlar"/>
+            <column name="author" value="8343e719-34ac-40b2-9371-3911c682388c" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
